@@ -1,3 +1,5 @@
+var https = require('https');
+
 function getAndPrintHTML () {
 
   var requestOptions = {
@@ -15,7 +17,10 @@ function getAndPrintHTML () {
 
     // the callback is invoked when a `data` chunk is received
     response.on('data', function (data) {
-      console.log('Chunk Received. Length:', data.length);
+      for (var i = 0; i < data.length; i++) {
+        var dataReceived = data;
+      }
+      console.log('Data Received:', dataReceived + '\n');
     });
 
     // the callback is invoked when all of the data has been received
@@ -28,3 +33,6 @@ function getAndPrintHTML () {
 
 
 }
+
+
+getAndPrintHTML();
